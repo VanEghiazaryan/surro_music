@@ -1,44 +1,3 @@
-import { defineStore } from 'pinia';
-
-export const useMusicData = defineStore('music', {
-    state: () => ({
-        fetchedData: ref<Array<CustomPlayList>>([]),
-        currentList: ref<CustomPlayList>(),
-    }),
-
-    actions: {
-        async getCustomList(id?:number) {
-            let query;
-            
-            if(id){
-                query={"id":id.toString()};
-            } 
-            
-            try { 
-                const data = await $fetch<Array<CustomPlayList>>(
-                    `/api/v1/{en}/Other/GuestCustomPlayList`,
-                    {
-                        query: query,
-                        baseURL: 'https://surromusicapi.innoverse.tech',
-                        method: 'GET',
-                    }
-                );
-                if (!id && data) {
-                    this.fetchedData = data;
-                    return this.fetchedData;
-                }
-                if (id && data.length > 0) {
-                    this.currentList = data[0]
-                    return this.currentList;
-                }
-                console.log('this fetch data ', this.fetchedData);
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            }
-        },
-    },
-});
-
 export class CustomPlayList {
     childList?: Array<CustomPlayList>;
     code?: string;
@@ -49,11 +8,15 @@ export class CustomPlayList {
     nameHy?: string;
     nameRu?: string;
     parentID?: number;
-    playList?: Array<PlayList>;
+    playList?: Array<Music>;
+    state: number
+    constructor() {
+        this.state = 0;
+    }
 }
 
 
-export class PlayList {
+export class Music {
     artistNameEn?: string;
     artistNameHy?: string;
     artistNameRu?: string;
@@ -68,8 +31,9 @@ export class PlayList {
     nameRu?: string;
     rowCount?: null;
     songUrl?: string
-    constructor() {
-        
+    state: number
+    constructor(){
+        this.state = 0;
     }
 }
 export class ChannelList {
@@ -80,16 +44,28 @@ export class ChannelList {
     nameEn?: string;
     nameHy?: string;
     nameRu?: string;
-    playList?: Array<PlayList>;
+    playList?: Array<Music>;
     suggestLike?: boolean
+}
+
+export class PlayList {
+    type?: PlayListType;
+    id?: number;
+    playList?: Array<Music>
 }
 
 export class SearchModel {
     channelList?: Array<ChannelList>;
-    playList?: Array<PlayList>;
+    playList?: Array<Music>;
 }
-export enum CurrentPlayList{
-    customPlayList,
-    thematic,
-    channel
+export enum PlayListType{
+    customPlayList = "customPlayList",
+    thematic = "thematic",
+    channel = "channel"
+}
+
+export enum ButtonType{
+    play = "play",
+    loading = "loading",
+    pause = "pause"
 }

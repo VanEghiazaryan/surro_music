@@ -9,6 +9,10 @@ export default defineNuxtConfig({
   tailwindcss: {
     cssPath: '~/assets/css/main.css',
   },
+
+  // plugins: [
+  //   '~/plugins/google-auth.js',
+  // ],
   // pinia: {
   //   storesDirs: ['./stores/**', '../core/stores/**'],
   // },

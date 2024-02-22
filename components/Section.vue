@@ -1,29 +1,33 @@
 <template>
-    <div class=" h-screen bg-[#171B26] fixed w-[100%]">
-        <div>
-            <div class="mt-[24px] ml-[30px] mb-[20px]">
-                <NuxtLink to="/" file="">
-                    <img src="../assets/image/front/logo.png" />
-                </NuxtLink>
+    <div class="w-[100%] h-screen vs:bg-[#00000066] ">
+        <div class="lg:w-full md:bg-[#171B26] w-[100%]  bg-[#171B26] h-screen vs:w-[50%] md:w-[30%]">
+            <div class="pt-[24px] ml-[30px] mb-[20px]">
+                <div class="flex justify-between">
+                    <NuxtLink to="/" file="" @click="$emit('clickMenuIcn')">
+                        <img src="../assets/image/front/logo.png" />
+                    </NuxtLink>
+                    <button @click="$emit('clickMenuIcn')"
+                        class="lg:invisible text-white text-[18px] mr-[10px] visible">x</button>
+                </div>
             </div>
             <div class="mt-[50px]">
-                <NuxtLink to="/" file="">
+                <NuxtLink to="/" file="" @click="$emit('clickMenuIcn')">
                     <div class="text-lg flex items-center text-white px-[20px] hover:bg-[#0D0F17] cursor-pointer	">
                         <img class="icn_section" src="../assets/image/icon/Union1.png" /> <span class="p-[10px]">Home</span>
                     </div>
                 </NuxtLink>
-                <NuxtLink to="/search">
+                <NuxtLink to="/search" @click="$emit('clickMenuIcn')">
                     <div class="text-lg flex items-center  text-white px-[20px] hover:bg-[#0D0F17] cursor-pointer">
                         <img class="icn_section" src="../assets/image/icon/Search.png" /> <span
                             class="p-[10px]">Search</span>
                     </div>
                 </NuxtLink>
-                <NuxtLink to="/liked">
+                <NuxtLink to="/liked" @click="$emit('clickMenuIcn')">
                     <div class=" text-lg flex items-center text-white px-[20px] hover:bg-[#0D0F17] cursor-pointer">
                         <img class="icn_section" src="../assets/image/icon/Liked.png" /><span class="p-[10px]">Liked</span>
                     </div>
                 </NuxtLink>
-                <NuxtLink to="/suro">
+                <NuxtLink to="/suro" @click="$emit('clickMenuIcn')">
                     <div class=" text-lg flex items-center text-white px-[20px] hover:bg-[#0D0F17] cursor-pointer">
                         <img class="icn_section" src="../assets/image/icon/Subtract.png" />
                         <span class="p-[10px]">Suro +</span>
@@ -31,16 +35,6 @@
                 </NuxtLink>
             </div>
         </div>
-        <!-- <div class="banner_div">
-            <div>
-                <img class="w-[130px] h-[130px] ml-[35px]" src="../assets/image/front/Banner.png" alt="">
-            </div>
-            <div>
-                <p class="text-[#999FB1] ml-[20px] mt-[10px]">Terms of use</p>
-                <p class="text-[#999FB1] ml-[20px] mt-[10px]">Privacy Policy</p>
-                <p class="text-[#999FB1] w-[224px] border-t p-[10px]">© 2022 Surro. All rights reserved.</p>
-            </div>
-        </div> -->
     </div>
 </template>
 

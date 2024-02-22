@@ -5,24 +5,36 @@
             <img class="ml-[10px]" src="../assets/image/icon/More.png" alt="">
         </div>
 
-        <div class="flex gap-4">
+        <div class="flex gap-4 w-full overflow-x-auto scroll_none">
             <div>
-                <img class="rounded-[10px] h-[83px] -[83px]" src="../assets/image/front/music5.png" alt="">
+                <div class=" h-[83px] w-[83px]">
+                    <img class="rounded-[10px] h-[100%] w-[100%]" src="../assets/image/front/music5.png" alt="">
+                </div>
             </div>
             <div>
-                <img class="rounded-[10px] h-[83px] w-[83px]" src="../assets/image/front/music6.png" alt="">
+                <div class=" h-[83px] w-[83px]">
+                    <img class="rounded-[10px] h-[100%] w-[100%]" src="../assets/image/front/music6.png" alt="">
+                </div>
             </div>
             <div>
-                <img class="rounded-[10px] h-[83px] w-[83px]" src="../assets/image/front/music7.png" alt="">
+                <div class=" h-[83px] w-[83px]">
+                    <img class="rounded-[10px] h-[100%] w-[100%]" src="../assets/image/front/music7.png" alt="">
+                </div>
             </div>
             <div>
-                <img class="rounded-[10px] h-[83px] w-[83px]" src="../assets/image/front/music8.png" alt="">
+                <div class=" h-[83px] w-[83px]">
+                    <img class="rounded-[10px] h-[100%] w-[100%]" src="../assets/image/front/music8.png" alt="">
+                </div>
             </div>
             <div>
-                <img class="rounded-[10px] h-[83px] w-[83px]" src="../assets/image/front/music9.png" alt="">
+                <div class=" h-[83px] w-[83px]">
+                    <img class="rounded-[10px] h-[100%] w-[100%]" src="../assets/image/front/music9.png" alt="">
+                </div>
             </div>
             <div>
-                <img class="rounded-[10px] h-[83px] w-[83px]" src="../assets/image/front/music10.png" alt="">
+                <div class=" h-[83px] w-[83px]">
+                    <img class="rounded-[10px] h-[100%] w-[100%]" src="../assets/image/front/music10.png" alt="">
+                </div>
             </div>
         </div>
     </div>
@@ -32,4 +44,12 @@
 
 </script>
 
-<style scoped></style>
+<style scoped>
+.scroll_none::-webkit-scrollbar {
+    display: none;
+}
+
+:-webkit-scrollbar {
+    width: 0px;
+}
+</style>

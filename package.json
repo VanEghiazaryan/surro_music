@@ -18,8 +18,10 @@
   "dependencies": {
     "@heroicons/vue": "^2.1.1",
     "@pinia/nuxt": "^0.5.1",
+    "debounce": "^2.0.0",
     "heroicons": "^2.1.1",
     "pinia": "^2.1.7",
-    "sass": "^1.70.0"
+    "sass": "^1.70.0",
+    "vue3-google-login": "^2.0.25"
   }
 }
